@@ -18,11 +18,20 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
     let audioFileName : String = "audio-recordered.m4a"
     
     
+    @IBOutlet var timeLabel: UILabel!
+    @IBAction func timeSlider(_ sender: UISlider) {
+        self.timeLabel.text = String(Int(sender.value))
+    }
+    @IBAction func startRecord(_ sender: UIButton) {
+        recordingAudioSetup()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        recordingAudioSetup()
+        self.timeLabel.text = "15"
+        //recordingAudioSetup()
         //recognizeSpeech()
 
     }

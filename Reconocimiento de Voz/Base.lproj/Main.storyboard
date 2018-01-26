@@ -24,21 +24,62 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hola, ¿que tal?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6kD-Mu-JHm">
                                 <rect key="frame" x="16" y="28" width="343" height="278"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.2462837521" green="0.41572637690000003" blue="0.66643053760000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="278" id="s21-IU-hcJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="i52-M5-SIw">
+                                <rect key="frame" x="26" y="343" width="323" height="94"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r12-Jd-vkM">
+                                        <rect key="frame" x="150.5" y="0.0" width="22.5" height="19"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="f3r-J3-P3b">
+                                        <rect key="frame" x="-2" y="37" width="327" height="5"/>
+                                        <connections>
+                                            <action selector="timeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="8Lv-vu-jRn"/>
+                                        </connections>
+                                    </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6n2-Jr-F1J">
+                                        <rect key="frame" x="0.0" y="59" width="323" height="35"/>
+                                        <color key="backgroundColor" red="0.35955305329999998" green="0.59112210399999998" blue="0.76238665800000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Ua8-DU-bDc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Empezar grabacion">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pqi-Vk-Jgf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6n2-Jr-F1J" secondAttribute="trailing" id="eh5-bl-nDC"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.24628375212669382" green="0.41572637692055259" blue="0.66643053756476678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6kD-Mu-JHm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3aW-Sn-Pfc"/>
+                            <constraint firstItem="i52-M5-SIw" firstAttribute="top" secondItem="6kD-Mu-JHm" secondAttribute="bottom" constant="37" id="64U-LK-dKS"/>
                             <constraint firstItem="6kD-Mu-JHm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="CZW-jo-CBr"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6kD-Mu-JHm" secondAttribute="bottom" constant="361" id="JRb-Jq-YCV"/>
+                            <constraint firstItem="i52-M5-SIw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="DX3-GB-nmh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="i52-M5-SIw" secondAttribute="bottom" constant="230" id="QD9-r7-OCn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="i52-M5-SIw" secondAttribute="trailing" constant="10" id="bFL-T7-GWi"/>
                             <constraint firstItem="6kD-Mu-JHm" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ypO-HA-t0o"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="textView" destination="6kD-Mu-JHm" id="5t5-TI-xaJ"/>
+                        <outlet property="timeLabel" destination="r12-Jd-vkM" id="2bf-TS-uvV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
