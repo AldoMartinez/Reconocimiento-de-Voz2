@@ -99,6 +99,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
         do {
             audioRecorder = try AVAudioRecorder(url: directoryURL()!, settings: settings)
             audioRecorder.delegate = self
+            print("Empieza grabación")
             audioRecorder.record()
             
             Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(self.stopRecording), userInfo: nil, repeats: false)
@@ -112,6 +113,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
     
     @objc func stopRecording(){
         audioRecorder.stop()
+        print("Termina grabación")
         audioRecorder = nil
         
         /*Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.recognizeSpeech), userInfo: nil, repeats: false)*/
